@@ -2,6 +2,8 @@ const express = require("express"); // Backend framework
 const mongoose = require("mongoose"); // Communicate with mongoDB
 const bodyParser = require("body-parser"); // Get data from HTTP requests
 
+const items = require("./routes/api/items");
+
 const app = express();
 
 app.use(bodyParser.json()); // Bodyparser Middleware
@@ -16,6 +18,9 @@ mongoose
   )
   .then(() => console.log("MongoDB Connected..."))
   .catch(err => console.log(err));
+
+// Use Routes
+app.use("/api/items", items);
 
 const port = process.env.PORT || 5000;
 
