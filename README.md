@@ -2,16 +2,35 @@
 
 A todo list built with the MERN stack (Mongo, Express, React, Node).
 
+### Install Server and Client Dependencies
+
+```bash
+$ npm install
+$ npm run client-install
+```
+
+# Available Scripts
+
 ### Start server
 
 ```bash
 $ npm run start
 ```
 
-After running the script above, open http://localhost:5000 to view the app in your browser.
-
 ### Start server (in development mode)
 
 ```bash
 $ npm run server
+```
+
+### Start client
+
+```bash
+$ npm run client
+```
+
+### Start client and server
+
+```bash
+$ npm run dev
 ```
