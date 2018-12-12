@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 import AppNavbar from "./components/AppNavbar";
 import TodoList from "./components/TodoList";
+import ItemModal from "./components/ItemModal";
+import { Container } from "reactstrap";
+
+import { Provider } from "react-redux";
+import store from "./store";
 
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
@@ -8,10 +13,15 @@ import "bootstrap/dist/css/bootstrap.css";
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <AppNavbar />
-        <TodoList />
-      </div>
+      <Provider store={store}>
+        <div className="App">
+          <AppNavbar />
+          <Container>
+            <ItemModal />
+            <TodoList />
+          </Container>
+        </div>
+      </Provider>
     );
   }
 }
