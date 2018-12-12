@@ -11,7 +11,6 @@ import {
 } from "reactstrap";
 import { connect } from "react-redux";
 import { addItem } from "../actions/itemActions";
-import uuid from "uuid";
 
 class ItemModal extends Component {
   // Forms usually have component level state
@@ -34,7 +33,6 @@ class ItemModal extends Component {
     e.preventDefault();
 
     const newItem = {
-      id: uuid(),
       name: this.state.name
     };
 
@@ -53,24 +51,24 @@ class ItemModal extends Component {
           style={{ marginBottom: "2rem" }}
           onClick={this.toggle}
         >
-          Add Item
+          Add Task
         </Button>
 
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
-          <ModalHeader toggle={this.toggle}>Add To Todo List</ModalHeader>
+          <ModalHeader toggle={this.toggle}>Add New Task</ModalHeader>
           <ModalBody>
             <Form onSubmit={this.onSubmit}>
               <FormGroup>
-                <Label for="item">Item</Label>
+                <Label for="item">New Task:</Label>
                 <Input
                   type="text"
                   name="name"
                   id="item"
-                  placeholder="Add todo item"
+                  placeholder="Task Description"
                   onChange={this.onChange}
                 />
                 <Button color="dark" style={{ marginTop: "2rem" }} block>
-                  Add Item
+                  Add Task
                 </Button>
               </FormGroup>
             </Form>
