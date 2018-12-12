@@ -9,7 +9,7 @@ $ npm install
 $ npm run client-install
 ```
 
-# Available Scripts
+## Available Scripts
 
 ### Start server
 
